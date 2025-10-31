@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "next build && git add -A && git commit -m 'deploy' && git push"
+    "export": "next build && rm -rf docs && cp -R out docs",
+    "deploy": "npm run export && git add -A && git commit -m 'deploy' && git push"
   },
   "dependencies": {
     "framer-motion": "^11.18.2",
