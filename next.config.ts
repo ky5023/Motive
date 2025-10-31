@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
-  output: "export",              // 静的サイトとして出力（これが超重要！）
-  distDir: "docs",               // 出力先を docs に指定
-  basePath: "/Moxon",            // GitHub Pages のリポジトリ名
-  assetPrefix: "/Moxon/",        // 静的ファイルのパスも調整
-  images: { unoptimized: true }  // 画像最適化を無効化
+  output: "export", // 静的サイト出力
+  basePath: isProd ? "/Moxon" : "", // ← GitHubリポジトリ名を反映
+  assetPrefix: isProd ? "/Moxon/" : "",
+  images: { unoptimized: true }, // GitHub Pagesでは必須
 };
 
 export default nextConfig;
