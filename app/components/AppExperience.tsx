@@ -1,7 +1,7 @@
 import Image, { type StaticImageData } from 'next/image';
-import MockStep1 from '../assets/experience-step1.png';
-import MockStep2 from '../assets/experience-step2.png';
-import MockStep3 from '../assets/experience-step3.png';
+import MockStep1 from '@/public/assets/experience-step1.png';
+import MockStep2 from '@/public/assets/experience-step2.png';
+import MockStep3 from '@/public/assets/experience-step3.png';
 
 type Step = {
   id: string;
@@ -28,7 +28,7 @@ const STEPS: Step[] = [
     valueRef: { label: 'ダイヤ最適化', anchor: '#value' },
     mock: {
       src: MockStep1,
-      alt: '移動目的入力のモック',
+      alt: 'モックイメージ',
     },
   },
   {
